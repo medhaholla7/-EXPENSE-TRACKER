@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Finance Expense Tracker</h1>
+
+    <!-- Income Section -->
+    <h2>Add Income</h2>
+    <form id="income-form">
+        <input type="text" id="income-source" placeholder="Source" required>
+        <input type="number" id="income-amount" placeholder="Amount" required>
+        <button type="submit">Add Income</button>
+    </form>
+
+    <!-- Category Section -->
+    <h2>Add Category</h2>
+    <form id="category-form">
+        <input type="text" id="category-name" placeholder="Category Name" required>
+        <button type="submit">Add Category</button>
+    </form>
+
+    <!-- Expense Section -->
+    <h2>Add Expense</h2>
+    <form id="expense-form">
+        <select id="expense-category" required></select>
+        <input type="text" id="expense-name" placeholder="Expense Name" required>
+        <input type="number" id="expense-amount" placeholder="Amount" required>
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Goal Section -->
+    <h2>Set Monthly Goals</h2>
+    <form id="goal-form">
+        <input type="number" id="goal-income" placeholder="Income Goal" required>
+        <input type="number" id="goal-expenses" placeholder="Expenses Goal" required>
+        <button type="submit">Set Goals</button>
+    </form>
+
+    <!-- Progress Bars -->
+    <h3>Income Goal: <span id="income-goal-display">0.00</span></h3>
+    <div class="progress-bar-container">
+        <div id="income-progress-bar" class="progress-bar"></div>
+    </div>
+
+    <h3>Expenses Goal: <span id="expenses-goal-display">0.00</span></h3>
+    <div class="progress-bar-container">
+        <div id="expenses-progress-bar" class="progress-bar"></div>
+    </div>
+
+    <!-- Transaction History Table -->
+    <h2>Transaction History</h2>
+    <table id="transaction-history">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Type</th>
+                <th>Category</th>
+                <th>Details</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <!-- Pie Chart -->
+    <h2>Expense Distribution</h2>
+    <canvas id="expenseChart" width="400" height="400"></canvas>
+
+    <!-- Options to view different sections -->
+    <div class="view-options">
+        <button id="show-transaction-history">Transaction History</button>
+        <button id="show-pie-chart">Pie Chart</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
